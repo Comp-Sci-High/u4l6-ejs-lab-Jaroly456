@@ -11,7 +11,7 @@ const inventory = [
         cost: 19.99,
         imageUrl: "https://m.media-amazon.com/images/I/51Rm1WGh98L._AC_UY1000_.jpg",
         path: "/item/0",
-        quantity: 120,
+        quantity: 0,
         colors: ["black", "white", "gray"]
       },
       {
@@ -94,8 +94,9 @@ app.get("/mens", (req, res) => {
 
 
 // Task 5: Set up the route handler for /item/0 which sends back the first item in product.ejs
-app.get("/item/0", (req, res) => {
-  res.status(200).json(inventory[0].items[0])
+app.get("/item/:id", (req, res) => {
+  const id = req.params.id
+  res.status(200).render("product.ejs", inventory[0].items[id])
 })
 
 
