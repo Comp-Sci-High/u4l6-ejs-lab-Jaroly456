@@ -94,7 +94,9 @@ app.get("/mens", (req, res) => {
 
 
 // Task 5: Set up the route handler for /item/0 which sends back the first item in product.ejs
-
+app.get("/item/0", (req, res) => {
+  res.status(200).json(inventory[0].items[0])
+})
 
 
 // Task 6: Plug in the values in product.ejs to get the page working

@@ -17,20 +17,20 @@
         <a href="/mens">Men's Clothing</a>
         <a href="/womens">Women's Clothing</a>
     </nav>
-
+    <% for(let i = 0; i < items.length; i++) { %>
     <div>
         <!-- Use the name attribute to set the h2 -->
-        <h2 class="center">...</h2>
+        <h2 class="center"><%= items[i].name %></h2>
         <!-- Use the imageUrl attribute to fix the image -->
-        <img src="..." class="main-image">
+        <img src=<%= items[i].imageUrl %> class="main-image">
         <div class="color-options">
           <!-- PINK ONLY: Iterate over the colors array to make a color-option div for each color. Plug in the color into the background-color slot. -->
 
-            <div class="color-option" style="background-color:"></div>
+            <div class="color-option" style="background-color: grey"></div>
 
         </div>
         <!-- Use the cost attribute to set the p tag -->
-        <p class="center">$...</p>
+        <p class="center">$<%= items[i].cost %></p>
 
         <!-- Use conditions to show the first button if the quantity is over 0. Otherwise, show the Sold Out button. -->
 
@@ -42,6 +42,6 @@
       
   
     </div>
-
+    <% } %>
 </body>
 </html>
